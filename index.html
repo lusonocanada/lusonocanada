@@ -10,61 +10,37 @@
   <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="7LP6DCR"></script>
 
   <style>
+    /* Configurações de layout */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      overflow: hidden; /* Remove o scroll do body */
     }
+
     iframe {
-      width: 90%;
-      max-width: 1000px;
-      height: 600px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; /* Faz o iframe ocupar 100% da altura */
       border: none;
     }
+
+    /* Esconde os textos desnecessários do GetYourGuide */
+    [data-gyg-cmp] {
+      display: none !important;
+    }
     .footer {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
-      color: #6c757d;
-    }
-    .footer a {
-      color: #007bff;
-      text-decoration: none;
-    }
-    .footer a:hover {
-      text-decoration: underline;
-    }
-    #loading {
-      text-align: center;
-      font-size: 16px;
-      color: #6c757d;
-      margin-top: 20px;
+      display: none; /* Esconde "Powered by GetYourGuide" */
     }
   </style>
 </head>
 <body>
-  <div id="loading">Carregando atividades...</div>
   <iframe
     src="https://widget.getyourguide.com/default/activities.frame?location_id=4846&locale_code=pt-BR&partner_id=7LP6DCR"
     allowfullscreen>
   </iframe>
-  <div class="footer">
-    Powered by <a href="https://www.getyourguide.com/" target="_blank" rel="sponsored">GetYourGuide</a>
-  </div>
-
-  <script>
-    const iframe = document.querySelector("iframe");
-    iframe.onload = () => {
-      document.getElementById("loading").style.display = "none";
-    };
-  </script>
 </body>
 </html>
