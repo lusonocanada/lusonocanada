@@ -1,29 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetYourGuide Widget</title>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <script async defer src="https://widget.getyourguide.com/dist/pa.integration.js"></script>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src https://widget.getyourguide.com https://*.getyourguide.com;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>GetYourGuide Widget</title>
+
+  <!-- GetYourGuide Analytics -->
+  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="7LP6DCR"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    iframe {
+      width: 90%;
+      max-width: 1000px;
+      height: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      border: none;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #6c757d;
+    }
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    #loading {
+      text-align: center;
+      font-size: 16px;
+      color: #6c757d;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-<iframe
-  src="https://widget.getyourguide.com/default/activities.frame?location_id=4846&locale_code=pt-BR&partner_id=7PL6DCR"
-  width="100%"
-  height="600"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
-    <div data-gyg-href="https://widget.getyourguide.com/default/activities.frame" 
-         data-gyg-location-id="4846" 
-         data-gyg-locale-code="pt-BR" 
-         data-gyg-widget="activities" 
-         data-gyg-number-of-items="5" 
-         data-gyg-cmp="luso_ontario" 
-         data-gyg-partner-id="7PL6DCR">
-         <span>Powered by <a target="_blank" rel="sponsored" href="https://www.getyourguide.com/ontario/4846">GetYourGuide</a></span>
-    </div>
+  <div id="loading">Carregando atividades...</div>
+  <iframe
+    src="https://widget.getyourguide.com/default/activities.frame?location_id=4846&locale_code=pt-BR&partner_id=7LP6DCR"
+    allowfullscreen>
+  </iframe>
+  <div class="footer">
+    Powered by <a href="https://www.getyourguide.com/" target="_blank" rel="sponsored">GetYourGuide</a>
+  </div>
+
+  <script>
+    const iframe = document.querySelector("iframe");
+    iframe.onload = () => {
+      document.getElementById("loading").style.display = "none";
+    };
+  </script>
 </body>
 </html>
