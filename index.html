@@ -7,14 +7,24 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <script async defer src="https://widget.getyourguide.com/dist/pa.integration.js"></script>
     <style>
-      /* Esconde o texto "Oferecido por GetYourGuide" */
-      div[data-gyg-widget] span {
+      /* Esconde qualquer texto com "Oferecido por" */
+      span:contains("Oferecido por"),
+      span:contains("Powered by GetYourGuide") {
         display: none !important;
       }
 
-      /* Esconde o texto "Powered by GetYourGuide" */
-      div[data-gyg-widget] + span {
-        display: none !important;
+      /* Força a largura e altura do widget para ocupar a tela completa */
+      div[data-gyg-widget] {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+      }
+
+      /* Remove espaços extras ao redor do widget */
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
       }
     </style>
   </head>
