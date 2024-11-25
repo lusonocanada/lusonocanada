@@ -16,7 +16,6 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
-      overflow: hidden; /* Remove o scroll do body */
     }
 
     iframe {
@@ -24,16 +23,16 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%; /* Faz o iframe ocupar 100% da altura */
+      height: 100%; /* O iframe ocupa 100% da altura */
       border: none;
     }
 
-    /* Esconde os textos desnecessários do GetYourGuide */
-    [data-gyg-cmp] {
+    /* Esconde os textos desnecessários */
+    [data-gyg-cmp], /* Oculta "Oferecido por GetYourGuide" */
+    .footer,        /* Oculta "Powered by GetYourGuide" */
+    div[data-gyg],  /* Oculta elementos associados ao widget */
+    div[data-gyg-frame] {
       display: none !important;
-    }
-    .footer {
-      display: none; /* Esconde "Powered by GetYourGuide" */
     }
   </style>
 </head>
