@@ -8,10 +8,10 @@
     <!-- Carrega o script do GetYourGuide -->
     <script async defer src="https://widget.getyourguide.com/dist/pa.integration.js"></script>
     <style>
-      /* Ajusta o tamanho do widget para ocupar a tela inteira */
+      /* Garante que o widget ocupe toda a largura disponível */
       div[data-gyg-widget] {
         width: 100% !important;
-        height: auto !important;
+        height: 100vh !important;
         margin: 0 !important;
       }
 
@@ -22,7 +22,7 @@
         overflow-x: hidden;
       }
 
-      /* Esconde textos indesejados */
+      /* Esconde textos de rodapé do widget */
       .gyg-footer,
       .gyg-affiliate-disclaimer {
         display: none !important;
@@ -41,24 +41,25 @@
       data-gyg-partner-id="7LP6DCR"
     ></div>
 
-    <!-- Script para monitorar erros e garantir renderização -->
+    <!-- Script para diagnóstico -->
     <script>
-      window.addEventListener("load", function () {
-        const widgetElement = document.querySelector("div[data-gyg-widget]");
+      window.addEventListener("load", () => {
+        const widgetElement = document.querySelector('div[data-gyg-widget]');
+
         if (!widgetElement) {
-          console.error("O elemento do widget não foi encontrado.");
+          console.error("Erro: O elemento do widget não foi encontrado.");
+          alert("Erro: O elemento do widget não foi encontrado.");
           return;
         }
 
-        widgetElement.addEventListener("load", () => {
-          console.log("Widget carregado com sucesso.");
-        });
-
         setTimeout(() => {
           if (!widgetElement.innerHTML.trim()) {
-            console.error("O widget parece não ter carregado corretamente.");
-            widgetElement.innerHTML =
-              "<p>O widget não pode ser carregado no momento. Tente novamente mais tarde.</p>";
+            console.error("Erro: O widget não foi carregado corretamente.");
+            alert(
+              "Erro: O widget não foi carregado corretamente. Verifique a configuração ou tente novamente mais tarde."
+            );
+          } else {
+            console.log("Widget carregado com sucesso.");
           }
         }, 3000);
       });
