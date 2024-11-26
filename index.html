@@ -12,6 +12,22 @@
     }
   </style>
 </head>
+<style>
+  /* Garante que o widget use a mesma tipografia do app */
+  div[data-gyg-widget] {
+    font-family: 'Titillium Web', 'Montserrat', sans-serif !important; /* Força as fontes */
+  }
+
+  /* Ajusta tamanhos específicos para o texto dentro do widget */
+  div[data-gyg-widget] h1, 
+  div[data-gyg-widget] h2, 
+  div[data-gyg-widget] h3, 
+  div[data-gyg-widget] p, 
+  div[data-gyg-widget] span {
+    font-family: 'Titillium Web', 'Montserrat', sans-serif !important;
+    font-weight: inherit; /* Respeita o peso de texto original */
+  }
+</style>
 <body>
   <!-- Widget do GetYourGuide -->
   <div 
