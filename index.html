@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Meta informações básicas -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Título da Página -->
   <title>Luso no Canadá | Ontario</title>
   
-  <!-- Carrega o script do GetYourGuide -->
-  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"></script>
+  <!-- GetYourGuide Analytics -->
+  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="7LP6DCR"></script>
   
+  <!-- Estilos Personalizados -->
   <style>
-    /* Garante que o widget ocupe toda a largura e altura da tela */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden; /* Remove barras de rolagem */
-    }
-    
+    /* Ajusta a tipografia do widget para combinar com o app */
     div[data-gyg-widget] {
-      width: 100% !important;
-      height: 100% !important; /* Garante que o widget ocupe toda a altura */
-      margin: 0 !important;
-      padding: 0 !important;
+      font-family: 'Titillium Web', 'Montserrat', sans-serif !important; /* Usa as fontes do app */
     }
 
-    /* Garante que o body seja flexível e centralize o conteúdo */
+    /* Ajusta os textos internos do widget */
+    div[data-gyg-widget] h1, 
+    div[data-gyg-widget] h2, 
+    div[data-gyg-widget] h3, 
+    div[data-gyg-widget] p, 
+    div[data-gyg-widget] span {
+      font-family: 'Titillium Web', 'Montserrat', sans-serif !important;
+      font-weight: inherit; /* Mantém o peso original */
+    }
+
+    /* Garante que o widget ocupe toda a largura da tela */
+    div[data-gyg-widget] {
+      width: 100% !important;
+      height: auto !important;
+      margin: 0 !important;
+    }
+
+    /* Remove margens e padding da página */
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #f9f9f9; /* Cor de fundo para melhorar a aparência */
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Estiliza a rolagem para visualização mais fluida (opcional) */
+    body {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
